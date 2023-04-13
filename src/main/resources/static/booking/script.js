@@ -2,14 +2,22 @@
 	function floatLabel(inputType) {
 		$(inputType).each(function () {
 			var $this = $(this);
-			// on focus add cladd active to label
+			// on focus add class active to label
 			$this.focus(function () {
 				$this.next().addClass("active");
 			});
-			//on blur check field and remove class if needed
+			// on blur check field and remove class if needed
 			$this.blur(function () {
 				if ($this.val() === '' || $this.val() === 'blank') {
-					$this.next().removeClass();
+					$this.next().removeClass("active");
+				}
+			});
+			// on change check field and add class if needed
+			$this.change(function() {
+				if ($this.val() !== '' && $this.val() !== 'blank') {
+					$this.next().addClass("active");
+				} else {
+					$this.next().removeClass("active");
 				}
 			});
 		});
@@ -17,6 +25,8 @@
 	// just add a class of "floatLabel to the input field!"
 	floatLabel(".floatLabel");
 })(jQuery);
+if (window.location.pathname.includes('/editInvoice/') || window.location.pathname.match(/\/editInvoiceLine\/\d+/)) {
+var inputs = document.querySelectorAll(".floatLabel");
 
 function validateCheckOutDate() {
 	var checkInDate = new Date(document.getElementById("arrive").value);
@@ -47,30 +57,14 @@ function validateCheckOutDate() {
 	}
   }
 
-var nameid = document.getElementById("name");
-var surname = document.getElementById("surname");
-var phone_number = document.getElementById("phone");
-var dni = document.getElementById("dni");
-var guestSelector = document.getElementById("guestSelection");
-guestSelector.addEventListener("change", () => {
-	if (guestSelector.selectedIndex !== 0) {
-		nameid.value = guestSelector.options[guestSelector.selectedIndex].getAttribute("name");
-		surname.value = guestSelector.options[guestSelector.selectedIndex].getAttribute("surname");
-		phone_number.value = guestSelector.options[guestSelector.selectedIndex].getAttribute("phone_number");
-		dni.value = guestSelector.options[guestSelector.selectedIndex].getAttribute("dni");
-
-		nameid.nextElementSibling.classList.add("active");
-		surname.nextElementSibling.classList.add("active");
-		phone_number.nextElementSibling.classList.add("active");
-		dni.nextElementSibling.classList.add("active");
-	} else {
-		nameid.value = '';
-		surname.value = '';
-		phone_number.value = '';
-		dni.value = '';
-		nameid.nextElementSibling.classList.remove("active");
-		surname.nextElementSibling.classList.remove("active");
-		phone_number.nextElementSibling.classList.remove("active");
-		dni.nextElementSibling.classList.remove("active");
+for (var i = 0; i < inputs.length; i++) {
+	var input = inputs[i];
+	if (input.value !== '') {
+		input.nextElementSibling.classList.add("active");
 	}
-});
+
+}
+}
+
+
+

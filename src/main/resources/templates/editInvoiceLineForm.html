@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Linea Factura</title>
+    <title>Editar Linea Factura</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <form th:object="${invoiceLine}" th:action="@{/saveInvoiceLine/}+${invoice_id}" method="post">
-    <h2 class="heading">Crear Línea Factura</h2>
+    <h2 class="heading">Editar Línea Factura</h2>
     <input th:field="*{invoice_line_id}" type="hidden">
 
 
@@ -47,7 +47,7 @@
 
     <div class="controls">
         <button type="submit" value="Submit" style="color:white">
-            <strong>Crear</strong>
+            <strong>Guardar</strong>
         </button>
     </div>
 </form>

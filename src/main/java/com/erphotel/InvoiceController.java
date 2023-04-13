@@ -90,7 +90,7 @@ public class InvoiceController {
        Optional<InvoiceLinesDomain> invoiceLinesDomain = invoiceLinesService.findById(invoice_line_id);
         model.addAttribute("invoice_id", invoice_id_temp);
         model.addAttribute("invoiceLine", invoiceLinesDomain);
-        return "createNewInvoiceLineForm";
+        return "editInvoiceLineForm";
     }
 
     @GetMapping ("/newInvoiceLine")
@@ -110,6 +110,8 @@ public class InvoiceController {
         invoiceLinesService.save(invoiceLinesDomain);
         return "redirect:/invoiceLines/" + invoice_id_temp;
     }
+
+
 
 
 }

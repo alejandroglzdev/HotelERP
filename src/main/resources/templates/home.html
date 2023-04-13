@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:sec="http://www.w3.org/1999/xhtml">
 
     <head>
         <meta charset="UTF-8">
@@ -118,12 +118,12 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="menu-item sub-menu">
+                                <li class="menu-item sub-menu" sec:authorize="hasAnyAuthority('staff')">
                                     <a href="#">
                                         <span class="menu-icon">
                                             <i class="ri-money-euro-box-line"></i>
                                         </span>
-                                        <span class="menu-title">Facturación</span>
+                                        <span class="menu-title" >Facturación</span>
                                     </a>
                                     <div class="sub-menu-list">
                                         <ul>
@@ -145,7 +145,7 @@
                                     <div class="sub-menu-list">
                                         <ul>
                                             <li class="menu-item">
-                                            <li class="menu-item">
+                                            <li class="menu-item" >
                                                 <a href="#">
                                                     <span id="btn_addRoom" class="menu-title">Añadir habitación</span>
                                                 </a>
