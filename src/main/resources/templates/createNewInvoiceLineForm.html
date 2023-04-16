@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Linea Factura</title>
+    <title th:text="#{invoicelineform.title.message}"></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <form th:object="${invoiceLine}" th:action="@{/saveInvoiceLine/}+${invoice_id}" method="post">
-    <h2 class="heading">Crear Línea Factura</h2>
+    <h2 class="heading" th:text="#{invoicelineform.title.message}"></h2>
     <input th:field="*{invoice_line_id}" type="hidden">
 
 
@@ -19,13 +19,13 @@
         <div class="controls">
             <i class="fa fa-sort"></i>
             <select id="service" class="floatLabel" aria-label="Default select example" th:field="*{invoice_line_type}">
-                <option th:value="CajaFuerte" th:text="CajaFuerte"></option>
-                <option th:value="Restaurante" th:text="Restaurante"></option>
-                <option th:value="MiniBar" th:text="MiniBar"></option>
-                <option th:value="Bar" th:text="Bar"></option>
-                <option th:value="OtrosServicios" th:text="OtrosServicios"></option>
+                <option th:value="CajaFuerte" th:text="#{invoicelineform.service.message1}"></option>
+                <option th:value="Restaurante" th:text="#{invoicelineform.service.message2}"></option>
+                <option th:value="MiniBar" th:text="#{invoicelineform.service.message3}"></option>
+                <option th:value="Bar" th:text="#{invoicelineform.service.message4}"></option>
+                <option th:value="OtrosServicios" th:text="#{invoicelineform.service.message5}"></option>
             </select>
-            <label for="service">Servicio</label>
+            <label for="service" th:text="#{invoicelineform.label.message}"></label>
         </div>
 
 
@@ -33,7 +33,7 @@
 
         <div class="controls">
             <input id="fecha" class="floatLabel" type="date" th:field="*{invoice_line_date}">
-            <label for="fecha">Fecha</label>
+            <label for="fecha" th:text="#{invoicelineform.datelabel.message}"></label>
         </div>
 
 
@@ -41,13 +41,13 @@
 
         <div class="controls">
             <input id="precio" class="floatLabel" type="number" step="0.01">
-            <label for="precio">Precio</label>
+            <label for="precio" th:text="#{invoicelineform.pricelabel.message}"></label>
         </div>
 
 
     <div class="controls">
         <button type="submit" value="Submit" style="color:white">
-            <strong>Crear</strong>
+            <strong th:text="#{invoicelineform.createbutton.message}"></strong>
         </button>
     </div>
 </form>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Reserva confirmada</title>
+  <title th:text="#{booktitle.message}"></title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./booking/confirm/style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<h1>Reserva realizada correctamente!</small></h1>
+<h1 th:text="#{confirmedbook.message}"></h1>
 
 <div class="circle-loader">
   <div class="checkmark draw"></div>

@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Información de las habitaciones</title>
-        <meta charset="utf-8">
+        <title th:text="#{bookstitle.message}"></title>
+        <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section bolded">Información de las Reservas</h2>
+                        <h2 class="heading-section bolded" th:text="#{bookstitle.message}"></h2>
                     </div>
                 </div>
                 <div class="row">
@@ -30,11 +30,12 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Nº Reserva</th>
-                                        <th>Check In</th>
-                                        <th>Check Out</th>
-                                        <th>Personas</th>
-                                        <th>Habitación</th>
+                                        <th th:text="#{booksth1.message}"></th>
+                                        <th th:text="#{booksth2.message}"></th>
+                                        <th th:text="#{booksth3.message}"></th>
+                                        <th th:text="#{booksth4.message}"></th>
+                                        <th th:text="#{booksth5.message}"></th>
+
                                     </tr>
                                 </thead>
                                 <tbody>

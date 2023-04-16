@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>CodePen - Basic hotel booking form</title>
+        <title></title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/booking/style.css">
@@ -13,7 +13,7 @@
 
         <form th:action="@{/actualizarPersona/{person_id}(person_id=${persona.person_id})}" th:object="${persona}" method="POST">
             <!--  General -->
-            <h2 class="heading">Modificar Persona</h2>
+            <h2 class="heading" th:text="#{editperson.heading.message}"></h2>
             <div class="form-group">
                 <div class="grid">
                     <div class="col-1-2">

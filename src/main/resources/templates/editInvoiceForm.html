@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Facturas</title>
+    <title th:text="#{editinvoiceform.title.message}"></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
@@ -12,34 +12,34 @@
 <body>
 <form th:action="@{/saveInvoice}" th:object="${invoice}" method="post">
     <!--  General -->
-    <h2 class="heading">Modificar Factura</h2>
+    <h2 class="heading" th:text="#{editinvoiceform.heading.message}"></h2>
     <input type="hidden" name="invoiceid" th:field="*{invoice_id}"/>
     <div class="form-group">
         <div class="controls">
             <input type="date" pattern="\d{4}-\d{2}-\d{2}" id="fechaFactura" class="floatLabel" name="fechaFactura" th:field="*{invoice_date}" required>
-            <label for="fechaFactura">Fecha Factura</label>
+            <label for="fechaFactura" th:text="#{invoiceform.choosedate.label}"></label>
         </div>
 
         <div class="controls">
             <i class="fa fa-sort"></i>
             <select  id = "invoiceStatus" class="floatLabel" aria-label="Default select example" th:field="*{invoice_status}">
-                <option th:value="Pagado" th:text="Pagado"></option>
-                <option th:value="Pendiente" th:text="Pendiente"></option>
+                <option th:value="Pagado" th:text="#{invoiceform.invoicestatus.message1}"></option>
+                <option th:value="Pendiente" th:text="#{invoiceform.invoicestatustest}"></option>
 
             </select>
 
-            <label for="invoiceStatus">Estado Factura</label>
+            <label for="invoiceStatus" th:text="#{invoiceform.paystatus.label}"></label>
 
         </div>
             <div class="controls">
                 <i class="fa fa-sort"></i>
                 <select  id = "paymentMethod" class="floatLabel" aria-label="Default select example" th:field="*{pay_method}" autofocus>
-                    <option th:value="Tarjeta" th:text="Tarjeta"></option>
-                    <option th:value="Efectivo" th:text="Efectivo"></option>
-                    <option th:value="Transferencia" th:text="Transferencia"></option>
-                    <option th:value="Bitcoin" th:text="Bitcoin"></option>
+                    <option th:value="Tarjeta" th:text="#{invoiceform.paymentmethod.message1}"></option>
+                    <option th:value="Efectivo" th:text="#{invoiceform.paymentmethod.message2}"></option>
+                    <option th:value="Transferencia" th:text="#{invoiceform.paymentmethod.message3}"></option>
+                    <option th:value="Bitcoin" th:text="#{invoiceform.paymentmethod.message4}"></option>
                 </select>
-                <label for="paymentMethod">Método de Pago</label>
+                <label for="paymentMethod" th:text="#{invoiceform.paymentmethod.label}"></label>
             </div>
 
 
@@ -49,7 +49,7 @@
     </div>
     <div class="controls">
         <button type="submit"  value="Submit" style="color:white" >
-            <strong>Guardar</strong></button>
+            <strong th:text="#{invoiceform.savebutton.message}">Guardar</strong></button>
     </div>
     </div>
 </form>
