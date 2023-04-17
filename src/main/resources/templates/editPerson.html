@@ -18,27 +18,27 @@
                 <div class="grid">
                     <div class="col-1-2">
                         <div class="controls">
-                            <div style="color: #4b4b4b">Nombre</div>
+                            <div style="color: #4b4b4b" th:text="#{editperson.name.text}"></div>
                             <input type="text" id="name" class="floatLabel" name="name" th:field="*{name}" required>                            
                         </div>
                     </div>
                     <div class="col-1-2">
                         <div class="controls">
-                            <div style="color: #4b4b4b">Apellido</div>
+                            <div style="color: #4b4b4b" th:text="#{editperson.surname.text}"></div>
                             <input type="text" id="surname" class="floatLabel" name="surname" th:field="*{surname}" required>
                         </div>
                     </div>
                 </div>
                 <div class="controls">
-                    <div style="color: #4b4b4b">Teléfono</div>
+                    <div style="color: #4b4b4b" th:text="#{editperson.number.text}"></div>
                     <input type="tel" id="phone" class="floatLabel" name="phone" th:field="*{phone_number}" required>
                 </div>
                 <div class="controls">
-                    <div style="color: #4b4b4b">Dni</div>
+                    <div style="color: #4b4b4b" th:text="#{editperson.dni.text}"></div>
                     <input type="text" id="dni" class="floatLabel" name="dni" th:field="*{dni}" required>
                 </div>
                 <div class="controls">               
-                    <button type="submit" value="Submit" style="color:white">Guardar</button>
+                    <button type="submit" value="Submit" style="color:white" th:text="#{save.button.text}"></button>
                 </div>
             </div>
 

@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section bolded">Habitaciones por limpiar</h2>
+                        <h2 class="heading-section bolded" th:text="#{cleaningstatusheading.message}"></h2>
                     </div>
                 </div>
                 <div class="row">
@@ -28,15 +28,15 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Nº habitación</th>
-                                        <th>Estado limpieza</th>
+                                        <th th:text="#{cleaningstatusth1.message}"></th>
+                                        <th th:text="#{cleaningstatusth2.message}"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr th:each="room : ${roomList}">
                                         <td th:text="${room.room_number}" class ="bolded"></td>
                                         <td>
-                                            <a th:href="@{/room/editCleaning/} + ${room.room_id}" class="btn btn-danger">Eliminar</a>
+                                            <a th:href="@{/room/editCleaning/} + ${room.room_id}" class="btn btn-danger" th:text="#{delete.button.text}"></a>
                                         </td>
 
                                     </tr>
@@ -44,7 +44,7 @@
                             </table>
                         </div>
                         <div th:case="false" class="alert alert-info" role="alert">
-                            Todas las habitaciones estan limpias!
+                            <p th:text="#{cleaningstatusalert.message}"></p>
                         </div>
                     </div>
                 </div>
