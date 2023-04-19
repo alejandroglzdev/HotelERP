@@ -17,7 +17,7 @@ btnCleaningStatus.onclick = function () {
     zonaIframe.innerHTML = '<iframe src="/rooms/cleaning/cleaningStatus" width="100%" height="100%"></iframe>';
 };
 btnDashboard.onclick = function () {
-    zonaIframe.innerHTML = '';
+    zonaIframe.innerHTML = '<iframe src="/dashboard" width="100%" height="100%"></iframe>';
 };
 btnAddBooking.onclick = function () {
     zonaIframe.innerHTML = '<iframe src="hotel_booking" width="100%" height="100%"></iframe>';
@@ -40,3 +40,6 @@ btnAddRoom.onclick = function () {
 btnAddEmployee.onclick = function () {
     zonaIframe.innerHTML = '<iframe src="/employee/new" width="100%" height="100%"></iframe>';
 };
+document.addEventListener("DOMContentLoaded", () => {
+     zonaIframe.innerHTML = '<iframe src="dashboard" width="100%" height="100%"></iframe>';
+});

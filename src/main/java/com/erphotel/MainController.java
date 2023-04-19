@@ -10,6 +10,10 @@ import org.springframework.security.core.userdetails.User;
 @Controller
 public class MainController {
 
+    @GetMapping ("/testing")
+    public String testingScreen(){
+        return "testing";
+    }
     @GetMapping("/")
     public String loginScreen(Model model, @AuthenticationPrincipal User username) {
         return "home";
@@ -19,4 +23,10 @@ public class MainController {
     public String home(Model model, @AuthenticationPrincipal User username) {
         return "home";
     }
+    
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
+        return "dashboard";
+    }
+    
 }
